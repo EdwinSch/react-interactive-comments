@@ -1,8 +1,10 @@
+import CommentsList from "./components/CommentsList";
+
 function App() {
   return (
-    <>
-      <h2>hello world</h2>
-    </>
+    <main>
+      <CommentsList />
+    </main>
   );
 }
 

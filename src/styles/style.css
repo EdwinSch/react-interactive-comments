@@ -36,4 +36,17 @@ ul {
 /* Styles */
 body {
   font-family: var(--font);
+  background: var(--backgroundClr);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  /* display: grid;
+  place-items: center; */
+}
+
+main {
+  margin: 0 16px;
+  border: var(--inspect);
+  width: 90vw;
+  max-width: 730px;
 }
