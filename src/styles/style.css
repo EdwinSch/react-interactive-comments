@@ -1,0 +1,39 @@
+/* Init */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Variables */
+:root {
+  --backgroundClr: #f5f6fa;
+  --primaryClr: #ffffff;
+  --accent: #5357b6;
+  --inactive: #c5c6ef;
+  --headingClr: #334253;
+  --textClr: #67727e;
+  --warningClr: #ed6368;
+
+  --font: "Rubik", sans-serif;
+  --inspect: solid red 1px;
+}
+
+/* Styles */
+body {
+  font-family: var(--font);
+}
