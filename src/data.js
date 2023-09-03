@@ -1,6 +1,14 @@
 import { nanoid } from "nanoid";
 
-const commentsData = [
+export const currentUser = {
+  id: nanoid(),
+  user: {
+    name: "juliusomo",
+    img: "/juliusomo.webp",
+  },
+};
+
+export const commentsData = [
   {
     id: nanoid(),
     user: {
@@ -51,5 +59,3 @@ const commentsData = [
     ],
   },
 ];
-
-export default commentsData;

@@ -31,6 +31,25 @@ ul {
   transition: 300ms ease;
 }
 
+.action-btn {
+  border: none;
+  border-radius: var(--borderRadius8);
+  background: var(--accent);
+  color: var(--primaryClr);
+  width: 104px;
+  height: 48px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 300ms ease;
+
+  &:hover {
+    background-color: var(--transparant);
+  }
+}
+
 /* Variables */
 :root {
   --backgroundClr: #f5f6fa;
@@ -42,6 +61,7 @@ ul {
   --warningClr: #ed6368;
   --borderClr: #e9ebf0;
 
+  --borderRadius8: 8px;
   --font: "Rubik", sans-serif;
   --inspect: solid red 1px;
 }
@@ -53,12 +73,10 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  /* display: grid;
-  place-items: center; */
 }
 
 main {
-  margin: 0 16px;
+  margin: 60px 16px;
   /* border: var(--inspect); */
   width: 90vw;
   max-width: 730px;
@@ -77,11 +95,12 @@ main {
   min-height: 170px;
   background: var(--primaryClr);
   padding: 24px;
-  border-radius: 8px;
+  border-radius: var(--borderRadius8);
 
   .comment-wrapper,
   .reply-wrapper {
     /* border: var(--inspect); */
+    width: 100%;
 
     .comment-header,
     .reply-header {
@@ -102,6 +121,15 @@ main {
           font-size: 1rem;
           font-weight: 500;
           color: var(--headingClr);
+        }
+        .user-flag {
+          border-radius: 2px;
+          border: none;
+          padding: 3px 6px;
+          background: var(--accent);
+          color: var(--primaryClr);
+          font-size: 0.813rem;
+          font-weight: 500;
         }
         .date {
           font-size: 1rem;
@@ -135,7 +163,7 @@ main {
   }
 }
 
-/* Reply component */
+/* Reply component specific */
 .replies-container {
   margin-left: 40px;
   padding-left: 40px;
@@ -165,5 +193,34 @@ main {
     &:hover {
       color: var(--accent);
     }
+  }
+}
+
+/* New Comment Input component */
+.form-control {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  background: var(--primaryClr);
+  border-radius: var(--borderRadius8);
+
+  & img {
+    width: 40px;
+    height: 40px;
+  }
+  & textarea {
+    resize: none;
+    width: 100%;
+    min-height: 96px;
+    padding: 12px 24px;
+    text-align: top;
+    border-radius: var(--borderRadius8);
+    border: 1px solid var(--borderClr);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--textClr);
   }
 }
