@@ -8,7 +8,7 @@ const Upvote = ({ upvotePts }) => {
     <section className="upvote-container">
       <button
         onClick={() => setVotes(votes + 1)}
-        className="btn vote-btn"
+        className="text-btn vote-btn"
         type="button"
       >
         <FaPlus />
@@ -16,7 +16,7 @@ const Upvote = ({ upvotePts }) => {
       <p className="votes">{votes}</p>
       <button
         onClick={() => setVotes(votes - 1)}
-        className="btn vote-btn"
+        className="text-btn vote-btn"
         type="button"
       >
         <FaMinus />
