@@ -1,9 +1,10 @@
 import { FaReply } from "react-icons/fa";
+import Upvote from "./Upvote";
 
 const Comment = ({ id, user, date, content, upvotePts, replies }) => {
   return (
     <article className="single-comment">
-      <div className="upvotes"> + -</div>
+      <Upvote upvotePts={upvotePts} />
       <div className="comment-wrapper">
         <div className="comment-header">
           <div className="user-wrapper">
@@ -12,7 +13,7 @@ const Comment = ({ id, user, date, content, upvotePts, replies }) => {
             <p className="date">{date}</p>
           </div>
 
-          <button className="reply-btn" type="button">
+          <button className="btn reply-btn" type="button">
             <FaReply />
             reply
           </button>
