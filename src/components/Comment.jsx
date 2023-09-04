@@ -1,8 +1,8 @@
-import { FaReply, FaTrash, FaEdit } from "react-icons/fa";
+import { FaReply } from "react-icons/fa";
 import Upvote from "./Upvote";
+import ActiveUserButtons from "./ActiveUserButtons";
 import Reply from "./Reply";
 import { useGlobalContext } from "../context";
-import { currentUser } from "../data";
 
 const Comment = ({ id, user, date, content, upvotePts, replies }) => {
   const { activeUser } = useGlobalContext();
@@ -26,16 +26,7 @@ const Comment = ({ id, user, date, content, upvotePts, replies }) => {
 
             <div className="btn-wrapper">
               {activeUser.user.name === user.name ? (
-                <>
-                  <button className="text-btn delete-btn" type="button">
-                    <FaTrash />
-                    delete
-                  </button>
-                  <button className="text-btn reply-btn" type="button">
-                    <FaEdit />
-                    edit
-                  </button>
-                </>
+                <ActiveUserButtons />
               ) : (
                 <button className="text-btn reply-btn" type="button">
                   <FaReply />
