@@ -50,6 +50,11 @@ ul {
   }
 }
 
+.btn-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
 /* Variables */
 :root {
   --backgroundClr: #f5f6fa;
@@ -142,6 +147,16 @@ main {
         align-items: center;
         gap: 8px;
         color: var(--accent);
+
+        &:hover {
+          color: var(--transparant);
+        }
+      }
+      .delete-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--warningClr);
 
         &:hover {
           color: var(--transparant);

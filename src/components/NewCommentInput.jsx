@@ -22,7 +22,7 @@ const NewCommentInput = () => {
     setNewItemContent("");
   };
 
-  console.log(comments);
+  // console.log(comments);
 
   return (
     <form className="form-control" onSubmit={handleSubmit}>
