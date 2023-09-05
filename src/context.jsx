@@ -12,6 +12,7 @@ export const AppProvider = ({ children }) => {
   const [activeUser, setActiveUser] = useState(currentUser);
 
   const [newItemContent, setNewItemContent] = useState("");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   // ---- Global Functions
   const addComment = (content) => {
@@ -34,6 +35,13 @@ export const AppProvider = ({ children }) => {
     setComments(newComments);
   };
 
+  const openModal = (id) => {
+    setModalIsOpen(true);
+  };
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -43,6 +51,9 @@ export const AppProvider = ({ children }) => {
         setNewItemContent,
         addComment,
         deleteComment,
+        openModal,
+        closeModal,
+        modalIsOpen,
       }}
     >
       {children}

@@ -15,7 +15,7 @@ export const commentsData = [
       name: "amyrobson",
       img: "/amyrobson.webp",
     },
-    date: "1 month ago ago",
+    date: "1 month ago",
     content:
       "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You’ve nailed the design and the responsiveness at various breakpoints works really well.",
     upvotePts: 12,
@@ -57,5 +57,18 @@ export const commentsData = [
         upvotePts: 2,
       },
     ],
+  },
+  // TEMP Test Item
+  {
+    id: nanoid(),
+    user: {
+      name: "juliusomo",
+      img: "/juliusomo.webp",
+    },
+    date: "now",
+    content:
+      "Forage art party gentrify vexillologist JOMO next level. Next level hot chicken tumblr sus plaid, fanny pack artisan sriracha vape shoreditch YOLO succulents unicorn poutine iceland.",
+    upvotePts: 3,
+    replies: [],
   },
 ];

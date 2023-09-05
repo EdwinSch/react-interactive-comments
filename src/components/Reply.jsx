@@ -3,7 +3,7 @@ import Upvote from "./Upvote";
 import { useGlobalContext } from "../context";
 
 const Reply = ({ id, user, date, content, upvotePts, replyTo, replies }) => {
-  // Get logged in user from global context
+  // Get Logged In user from global context
   const { activeUser } = useGlobalContext();
 
   return (

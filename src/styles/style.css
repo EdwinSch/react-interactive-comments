@@ -28,7 +28,11 @@ ul {
   font-weight: 500;
   text-transform: capitalize;
   cursor: pointer;
-  transition: 300ms ease;
+  transition: 250ms ease;
+
+  &:hover {
+    opacity: var(--transparant);
+  }
 }
 
 .action-btn {
@@ -43,10 +47,10 @@ ul {
   font-weight: 500;
   text-transform: uppercase;
   cursor: pointer;
-  transition: 300ms ease;
+  transition: 250ms ease;
 
   &:hover {
-    background-color: var(--transparant);
+    opacity: var(--transparant);
   }
 }
 
@@ -60,7 +64,7 @@ ul {
   --backgroundClr: #f5f6fa;
   --primaryClr: #ffffff;
   --accent: #5357b6;
-  --transparant: #c5c6ef;
+  --transparant: 0.4;
   --headingClr: #334253;
   --textClr: #67727e;
   --warningClr: #ed6368;
@@ -71,20 +75,64 @@ ul {
   --inspect: solid red 1px;
 }
 
-/* Main */
+/* Main Styles */
+
 body {
   font-family: var(--font);
   background: var(--backgroundClr);
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 main {
   margin: 60px 16px;
-  /* border: var(--inspect); */
   width: 90vw;
   max-width: 730px;
+}
+
+/* Modal Component*/
+
+.fullscreen-overlay {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: grid;
+  place-items: center;
+
+  .modal {
+    background: var(--primaryClr);
+    width: 400px;
+    border-radius: var(--borderRadius8);
+    padding: 32px;
+
+    & h3 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+    & p {
+      margin-bottom: 20px;
+      color: var(--textClr);
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5rem;
+    }
+    .cancel-btn {
+      flex: 1;
+      background: var(--textClr);
+      /* &:hover {
+        background-color: var(--transparant);
+      } */
+    }
+    .confirm-delete-btn {
+      flex: 1;
+      background: var(--warningClr);
+    }
+  }
 }
 
 /* Comments List */
@@ -147,20 +195,12 @@ main {
         align-items: center;
         gap: 8px;
         color: var(--accent);
-
-        &:hover {
-          color: var(--transparant);
-        }
       }
       .delete-btn {
         display: flex;
         align-items: center;
         gap: 8px;
         color: var(--warningClr);
-
-        &:hover {
-          color: var(--transparant);
-        }
       }
     }
     .content-text {
@@ -186,6 +226,7 @@ main {
 }
 
 /* Upvote component */
+
 .upvote-container {
   border-radius: 10px;
   height: 100px;
@@ -212,6 +253,7 @@ main {
 }
 
 /* New Comment Input component */
+
 .form-control {
   width: 100%;
   padding: 24px;
