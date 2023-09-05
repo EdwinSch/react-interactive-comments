@@ -22,8 +22,6 @@ const NewCommentInput = () => {
     setNewItemContent("");
   };
 
-  // console.log(comments);
-
   return (
     <form className="form-control" onSubmit={handleSubmit}>
       <img src={activeUser.user.img} alt={activeUser.user.name} />

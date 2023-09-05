@@ -1,9 +1,16 @@
 import { FaTrash, FaEdit } from "react-icons/fa";
+import { useGlobalContext } from "../context";
 
-const ActiveUserButtons = () => {
+const ActiveUserButtons = ({ id }) => {
+  const { deleteComment } = useGlobalContext();
+
   return (
     <>
-      <button className="text-btn delete-btn" type="button">
+      <button
+        onClick={() => deleteComment(id)}
+        className="text-btn delete-btn"
+        type="button"
+      >
         <FaTrash />
         delete
       </button>

@@ -27,7 +27,11 @@ export const AppProvider = ({ children }) => {
       replies: [],
     };
     setComments([...comments, newComment]);
-    //   triggerToast("item added", "success");
+  };
+
+  const deleteComment = (commentId) => {
+    const newComments = comments.filter((item) => item.id !== commentId);
+    setComments(newComments);
   };
 
   return (
@@ -38,6 +42,7 @@ export const AppProvider = ({ children }) => {
         newItemContent,
         setNewItemContent,
         addComment,
+        deleteComment,
       }}
     >
       {children}
