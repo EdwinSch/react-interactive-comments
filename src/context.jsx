@@ -19,8 +19,8 @@ export const AppProvider = ({ children }) => {
     const newComment = {
       id: nanoid(),
       user: {
-        name: "juliusomo",
-        img: "/juliusomo.webp",
+        name: activeUser.user.name,
+        img: activeUser.user.img,
       },
       date: "now",
       content: content,
@@ -35,7 +35,7 @@ export const AppProvider = ({ children }) => {
     setComments(newComments);
   };
 
-  const openModal = (id) => {
+  const openModal = () => {
     setModalIsOpen(true);
   };
   const closeModal = () => {
