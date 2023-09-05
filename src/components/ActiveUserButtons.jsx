@@ -5,7 +5,7 @@ const ActiveUserButtons = ({ id }) => {
   const { toggleModal } = useGlobalContext();
 
   return (
-    <>
+    <div className="action-btns-wrapper">
       <button
         onClick={() => toggleModal(id)}
         className="text-btn delete-btn"
@@ -18,7 +18,7 @@ const ActiveUserButtons = ({ id }) => {
         <FaEdit />
         edit
       </button>
-    </>
+    </div>
   );
 };
 

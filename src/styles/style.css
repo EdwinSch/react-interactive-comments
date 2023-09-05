@@ -19,6 +19,24 @@ ul {
   object-fit: cover;
 }
 
+/* Variables */
+:root {
+  --backgroundClr: #f5f6fa;
+  --primaryClr: #ffffff;
+  --accent: #5357b6;
+  --transparant: 0.4;
+  --headingClr: #334253;
+  --textClr: #67727e;
+  --warningClr: #ed6368;
+  --borderClr: #e9ebf0;
+
+  --borderRadius8: 8px;
+  --font: "Rubik", sans-serif;
+  --inspect: solid red 1px;
+}
+
+/* Buttons */
+
 .text-btn {
   border: none;
   background: none;
@@ -40,7 +58,7 @@ ul {
   border-radius: var(--borderRadius8);
   background: var(--accent);
   color: var(--primaryClr);
-  width: 104px;
+  min-width: 104px;
   height: 48px;
   font-family: inherit;
   font-size: 1rem;
@@ -54,25 +72,48 @@ ul {
   }
 }
 
+.reply-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+}
+
+.delete-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--warningClr);
+}
+
 .btn-wrapper {
+  display: flex;
+  gap: 20px;
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.btn-wrapper-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+
+  @media only screen and (max-width: 600px) {
+    align-items: end;
+  }
+}
+
+.action-btns-wrapper {
   display: flex;
   gap: 20px;
 }
 
-/* Variables */
-:root {
-  --backgroundClr: #f5f6fa;
-  --primaryClr: #ffffff;
-  --accent: #5357b6;
-  --transparant: 0.4;
-  --headingClr: #334253;
-  --textClr: #67727e;
-  --warningClr: #ed6368;
-  --borderClr: #e9ebf0;
-
-  --borderRadius8: 8px;
-  --font: "Rubik", sans-serif;
-  --inspect: solid red 1px;
+.hide-on-desktop {
+  display: none;
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
 }
 
 /* Main Styles */
@@ -84,12 +125,21 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
+  padding: 60px 16px 0 16px;
 }
 
 main {
-  margin: 60px 16px;
   width: 90vw;
   max-width: 730px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 30px 14px;
+  }
+  main {
+    width: 100%;
+  }
 }
 
 /* Modal Component*/
@@ -150,6 +200,11 @@ main {
   padding: 24px;
   border-radius: var(--borderRadius8);
 
+  @media only screen and (max-width: 600px) {
+    flex-direction: column-reverse;
+    padding: 16px;
+  }
+
   .comment-wrapper,
   .reply-wrapper {
     /* border: var(--inspect); */
@@ -190,18 +245,6 @@ main {
           color: var(--textClr);
         }
       }
-      .reply-btn {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: var(--accent);
-      }
-      .delete-btn {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: var(--warningClr);
-      }
     }
     .content-text {
       font-size: 1rem;
@@ -219,10 +262,16 @@ main {
 }
 
 /* Reply component specific */
+
 .replies-container {
   margin-left: 40px;
   padding-left: 40px;
   border-left: 3px solid var(--borderClr);
+
+  @media only screen and (max-width: 600px) {
+    margin-left: 0;
+    padding-left: 16px;
+  }
 }
 
 /* Upvote component */
@@ -236,6 +285,13 @@ main {
   justify-content: space-between;
   align-items: center;
   background: var(--backgroundClr);
+
+  @media only screen and (max-width: 600px) {
+    width: 100px;
+    height: auto;
+    padding: 12px;
+    flex-direction: row;
+  }
 
   .votes {
     font-size: 1rem;
@@ -254,7 +310,8 @@ main {
 
 /* New Comment Input component */
 
-.form-control {
+/* ---Desktop */
+.form-control-desktop {
   width: 100%;
   padding: 24px;
   display: flex;
@@ -266,18 +323,47 @@ main {
     width: 40px;
     height: 40px;
   }
-  & textarea {
-    resize: none;
-    width: 100%;
-    min-height: 96px;
-    padding: 12px 24px;
-    text-align: top;
-    border-radius: var(--borderRadius8);
-    border: 1px solid var(--borderClr);
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 24px;
-    color: var(--textClr);
+
+  @media only screen and (max-width: 600px) {
+    display: none;
   }
+}
+/* ---Mobile*/
+
+.form-control-mobile {
+  display: none;
+  width: 100%;
+  padding: 16px;
+  background: var(--primaryClr);
+  border-radius: var(--borderRadius8);
+
+  .form-wrapper {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+
+    & img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    display: block;
+  }
+}
+
+& textarea {
+  resize: none;
+  width: 100%;
+  min-height: 96px;
+  padding: 12px 24px;
+  text-align: top;
+  border-radius: var(--borderRadius8);
+  border: 1px solid var(--borderClr);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--textClr);
 }

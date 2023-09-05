@@ -9,7 +9,22 @@ const Comment = ({ id, user, date, content, upvotePts, replies }) => {
   return (
     <>
       <article className="single-comment">
-        <Upvote upvotePts={upvotePts} />
+        <div className="btn-wrapper-mobile">
+          <Upvote upvotePts={upvotePts} />
+
+          {/* start mobile structure */}
+          <div className="hide-on-desktop">
+            {activeUser.user.name === user.name ? (
+              <ActiveUserButtons id={id} />
+            ) : (
+              <button className="text-btn reply-btn" type="button">
+                <FaReply />
+                reply
+              </button>
+            )}
+          </div>
+          {/* end mobile structure */}
+        </div>
         <div className="comment-wrapper">
           <div className="comment-header">
             <div className="user-wrapper">
@@ -23,7 +38,6 @@ const Comment = ({ id, user, date, content, upvotePts, replies }) => {
             </div>
 
             {/* Action BTNS switch */}
-
             <div className="btn-wrapper">
               {activeUser.user.name === user.name ? (
                 <ActiveUserButtons id={id} />
