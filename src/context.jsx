@@ -5,6 +5,7 @@ import { commentsData, currentUser } from "./data";
 const AppContext = createContext();
 
 // ---- Initialisation
+let currentId = "";
 
 export const AppProvider = ({ children }) => {
   // ---- Global States
@@ -33,13 +34,13 @@ export const AppProvider = ({ children }) => {
   const deleteComment = (commentId) => {
     const newComments = comments.filter((item) => item.id !== commentId);
     setComments(newComments);
+    setModalIsOpen(false);
   };
 
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
-  const closeModal = () => {
-    setModalIsOpen(false);
+  const toggleModal = (commentId) => {
+    setModalIsOpen(!modalIsOpen);
+    currentId = commentId;
+    return currentId;
   };
 
   return (
@@ -51,9 +52,9 @@ export const AppProvider = ({ children }) => {
         setNewItemContent,
         addComment,
         deleteComment,
-        openModal,
-        closeModal,
+        toggleModal,
         modalIsOpen,
+        currentId,
       }}
     >
       {children}

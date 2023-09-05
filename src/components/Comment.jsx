@@ -26,7 +26,7 @@ const Comment = ({ id, user, date, content, upvotePts, replies }) => {
 
             <div className="btn-wrapper">
               {activeUser.user.name === user.name ? (
-                <ActiveUserButtons />
+                <ActiveUserButtons id={id} />
               ) : (
                 <button className="text-btn reply-btn" type="button">
                   <FaReply />

@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../context";
 
 const Modal = () => {
-  const { closeModal, deleteComment } = useGlobalContext();
+  const { toggleModal, deleteComment, currentId } = useGlobalContext();
 
   return (
     <section className="fullscreen-overlay">
@@ -13,13 +13,17 @@ const Modal = () => {
         </p>
         <div className="btn-wrapper">
           <button
-            onClick={closeModal}
+            onClick={toggleModal}
             className="action-btn cancel-btn"
             type="button"
           >
             no, cancel
           </button>
-          <button className="action-btn confirm-delete-btn" type="button">
+          <button
+            onClick={() => deleteComment(currentId)}
+            className="action-btn confirm-delete-btn"
+            type="button"
+          >
             yes, delete
           </button>
         </div>
