@@ -1,4 +1,8 @@
-/* Init */
+/* Imports */
+
+@import "../styles/buttons.css";
+
+/* Reset & Utilities */
 *,
 ::after,
 ::before {
@@ -29,6 +33,7 @@ ul {
   --textClr: #67727e;
   --warningClr: #ed6368;
   --borderClr: #e9ebf0;
+  --hoverClr: #c5c6ef;
 
   --borderRadius8: 8px;
   --font: "Rubik", sans-serif;
