@@ -32,3 +32,16 @@
     color: var(--hoverClr);
   }
 }
+
+.vote-btn {
+  width: fit-content;
+  background: none;
+  border: none;
+  color: var(--hoverClr);
+  cursor: pointer;
+  transition: 250ms ease;
+
+  &:hover {
+    color: var(--accent);
+  }
+}

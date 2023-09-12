@@ -1,6 +1,7 @@
 /* Imports */
 
 @import "../styles/buttons.css";
+@import "../components/vote.css";
 
 /* Reset & Utilities */
 *,
@@ -28,7 +29,6 @@ ul {
   --backgroundClr: #f5f6fa;
   --primaryClr: #ffffff;
   --accent: #5357b6;
-  --transparant: 0.4;
   --headingClr: #334253;
   --textClr: #67727e;
   --warningClr: #ed6368;
