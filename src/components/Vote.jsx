@@ -1,13 +1,28 @@
+import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
 const Vote = () => {
+  const [score, setScore] = useState(0);
+
   return (
     <div className="vote-container">
-      <button className="vote-btn">
+      <button
+        onClick={() => setScore(score + 1)}
+        className="vote-btn"
+        aria-label="decrease score button"
+        type="button"
+      >
         <FaPlus />
       </button>
-      <p className="score">12</p>
-      <button className="vote-btn">
+
+      <p className="score">{score}</p>
+
+      <button
+        onClick={() => setScore(score - 1)}
+        className="vote-btn"
+        aria-label="increase score button"
+        type="button"
+      >
         <FaMinus />
       </button>
     </div>
