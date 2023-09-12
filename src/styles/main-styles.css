@@ -1,0 +1,42 @@
+/* Init */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Variables */
+:root {
+  --backgroundClr: #f5f6fa;
+  --primaryClr: #ffffff;
+  --accent: #5357b6;
+  --transparant: 0.4;
+  --headingClr: #334253;
+  --textClr: #67727e;
+  --warningClr: #ed6368;
+  --borderClr: #e9ebf0;
+
+  --borderRadius8: 8px;
+  --font: "Rubik", sans-serif;
+  --inspect: solid red 1px;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--backgroundClr);
+  min-height: 100vh;
+}
