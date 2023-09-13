@@ -1,4 +1,5 @@
 import Vote from "./Vote";
+import { FaReply } from "react-icons/fa";
 
 const Comment = ({ id, user, date, content, points, replies }) => {
   return (
@@ -15,7 +16,12 @@ const Comment = ({ id, user, date, content, points, replies }) => {
 
           <p className="text-content">{content}</p>
 
-          <button className="text-btn reply-btn">Reply</button>
+          <div className="btn-wrapper">
+            <button className="text-btn reply-btn">
+              <FaReply className="icon" />
+              Reply
+            </button>
+          </div>
         </div>
       </article>
     </div>

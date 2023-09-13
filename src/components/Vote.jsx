@@ -12,7 +12,7 @@ const Vote = ({ points }) => {
         aria-label="decrease score button"
         type="button"
       >
-        <FaPlus />
+        <FaPlus className="icon-inc-dec" />
       </button>
 
       <p className="score">{score}</p>
@@ -23,7 +23,7 @@ const Vote = ({ points }) => {
         aria-label="increase score button"
         type="button"
       >
-        <FaMinus />
+        <FaMinus className="icon-inc-dec" />
       </button>
     </div>
   );

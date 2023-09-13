@@ -28,6 +28,11 @@
   cursor: pointer;
   transition: 250ms ease;
 
+  .icon {
+    font-size: 12px;
+    margin-right: 8px;
+  }
+
   &:hover {
     color: var(--hoverClr);
   }

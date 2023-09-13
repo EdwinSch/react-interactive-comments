@@ -14,6 +14,7 @@
       & header {
         margin-bottom: 15px;
         display: flex;
+        align-items: center;
         gap: 16px;
 
         & img {
@@ -39,11 +40,21 @@
         line-height: 24px;
       }
 
-      .reply-btn {
+      .btn-wrapper {
         position: absolute;
-        top: 0;
+        top: 6px;
         right: 0;
+
+        @media only screen and (max-width: 500px) {
+          top: auto;
+          bottom: -50px;
+        }
       }
+    }
+
+    @media only screen and (max-width: 500px) {
+      padding: 16px;
+      flex-direction: column-reverse;
     }
   }
 }
