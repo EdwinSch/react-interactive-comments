@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { commentsData } from "./data";
 
 const AppContext = createContext();
 
@@ -6,7 +7,7 @@ const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   // ---- Global States
-  const [comments, setComments] = useState("");
+  const [comments, setComments] = useState(commentsData);
 
   // ---- Global Functions
 

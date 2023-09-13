@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
-const Vote = () => {
-  const [score, setScore] = useState(0);
+const Vote = ({ points }) => {
+  const [score, setScore] = useState(points);
 
   return (
     <div className="vote-container">

@@ -3,6 +3,7 @@
 @import "../styles/buttons.css";
 @import "../components/vote.css";
 @import "../components//commentsList.css";
+@import "../components//comment.css";
 
 /* Reset & Utilities */
 *,
@@ -53,7 +54,7 @@ main {
   margin: 0 auto;
   margin-top: 60px;
   max-width: 730px;
-  border: var(--inspect);
+  /* border: var(--inspect); */
 }
 
 .overlay {

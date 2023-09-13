@@ -1,0 +1,49 @@
+.comment-set-wrapper {
+  /* set */
+  .comment {
+    background: var(--primaryClr);
+    border-radius: var(--borderRadius8);
+    min-height: 167px;
+    padding: 24px;
+    display: flex;
+    gap: 24px;
+
+    .content-wrapper {
+      position: relative;
+
+      & header {
+        margin-bottom: 15px;
+        display: flex;
+        gap: 16px;
+
+        & img {
+          width: 32px;
+        }
+
+        .username {
+          font-size: 1rem;
+          font-weight: 500;
+          color: var(--headingClr);
+        }
+        .timestamp {
+          font-size: 1rem;
+          font-weight: 400;
+          color: var(--textClr);
+        }
+      }
+
+      .text-content {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--textClr);
+        line-height: 24px;
+      }
+
+      .reply-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}

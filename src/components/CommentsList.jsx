@@ -1,14 +1,13 @@
-import { commentsData } from "../data";
+import Comment from "./Comment";
+import { useGlobalContext } from "../context";
 
 const CommentsList = () => {
+  const { comments } = useGlobalContext();
+
   return (
     <section className="list-container">
-      {commentsData.map((comment) => {
-        return (
-          <article key={comment.id} {...comment}>
-            {comment.date}
-          </article>
-        );
+      {comments.map((comment) => {
+        return <Comment key={comment.id} {...comment} />;
       })}
     </section>
   );
