@@ -1,4 +1,5 @@
 import Vote from "./components/Vote";
+import CommentsList from "./components/CommentsList";
 
 function App() {
   return (
@@ -6,7 +7,7 @@ function App() {
       {/* <div className="overlay">overlay</div> */}
 
       <main>
-        <h3>content</h3>
+        <CommentsList />
       </main>
     </>
   );

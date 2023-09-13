@@ -2,6 +2,7 @@
 
 @import "../styles/buttons.css";
 @import "../components/vote.css";
+@import "../components//commentsList.css";
 
 /* Reset & Utilities */
 *,
