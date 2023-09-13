@@ -1,7 +1,10 @@
 import Vote from "./Vote";
-import { FaReply } from "react-icons/fa";
+import { FaReply, FaEdit, FaTrash } from "react-icons/fa";
+import { useGlobalContext } from "../context";
 
 const Comment = ({ id, user, date, content, points, replies }) => {
+  const { activeUser } = useGlobalContext();
+
   return (
     <div className="comment-set-wrapper">
       <article className="comment">
@@ -17,10 +20,26 @@ const Comment = ({ id, user, date, content, points, replies }) => {
           <p className="text-content">{content}</p>
 
           <div className="btn-wrapper">
-            <button className="text-btn reply-btn">
-              <FaReply className="icon" />
-              Reply
-            </button>
+            {/* buttons switch START */}
+
+            {activeUser === user.name ? (
+              <>
+                <button className="text-btn delete-btn">
+                  <FaTrash className="icon" />
+                  Delete
+                </button>
+                <button className="text-btn">
+                  <FaEdit className="icon" />
+                  Edit
+                </button>
+              </>
+            ) : (
+              <button className="text-btn reply-btn">
+                <FaReply className="icon" />
+                Reply
+              </button>
+            )}
+            {/* buttons switch END */}
           </div>
         </div>
       </article>

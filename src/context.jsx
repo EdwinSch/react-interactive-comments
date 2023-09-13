@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { commentsData } from "./data";
+import { commentsData, currentUser } from "./data";
 
 const AppContext = createContext();
 
@@ -8,6 +8,7 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   // ---- Global States
   const [comments, setComments] = useState(commentsData);
+  const [activeUser, setActiveUser] = useState(currentUser.user.name);
 
   // ---- Global Functions
 
@@ -15,6 +16,7 @@ export const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         comments,
+        activeUser,
       }}
     >
       {children}
