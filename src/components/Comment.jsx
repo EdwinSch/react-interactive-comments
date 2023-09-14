@@ -14,6 +14,8 @@ const Comment = ({ id, user, date, content, points, replies }) => {
           <header>
             <img src={user.img} alt={user.name} />
             <p className="username">{user.name}</p>
+            {/* Current user batch */}
+            {activeUser.name === user.name && <div className="badge">you</div>}
             <p className="timestamp">{date}</p>
           </header>
 
