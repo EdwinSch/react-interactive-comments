@@ -8,7 +8,7 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   // ---- Global States
   const [comments, setComments] = useState(commentsData);
-  const [activeUser, setActiveUser] = useState(currentUser.user.name);
+  const [activeUser, setActiveUser] = useState(currentUser.user);
 
   // ---- Global Functions
 

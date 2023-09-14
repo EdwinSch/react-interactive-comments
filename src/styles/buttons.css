@@ -1,5 +1,5 @@
 .action-btn {
-  width: 104px;
+  min-width: 104px;
   height: 48px;
   background: var(--accent);
   border-radius: var(--borderRadius8);

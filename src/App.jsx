@@ -1,5 +1,6 @@
 import Vote from "./components/Vote";
 import CommentsList from "./components/CommentsList";
+import Input from "./components/Input";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
 
       <main>
         <CommentsList />
+        <Input />
       </main>
     </>
   );

@@ -22,7 +22,7 @@ const Comment = ({ id, user, date, content, points, replies }) => {
           <div className="btn-wrapper">
             {/* buttons switch START */}
 
-            {activeUser === user.name ? (
+            {activeUser.name === user.name ? (
               <>
                 <button className="text-btn delete-btn">
                   <FaTrash className="icon" />
