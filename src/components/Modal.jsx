@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../context";
 
 const Modal = () => {
-  const { setIsModalOpen } = useGlobalContext();
+  const { setIsModalOpen, deleteComment, currentId } = useGlobalContext();
 
   return (
     <div className="overlay">
@@ -19,7 +19,11 @@ const Modal = () => {
           >
             no, cancel
           </button>
-          <button className="action-btn confirm-btn" type="button">
+          <button
+            onClick={() => deleteComment(currentId)}
+            className="action-btn confirm-btn"
+            type="button"
+          >
             yes, delete
           </button>
         </div>

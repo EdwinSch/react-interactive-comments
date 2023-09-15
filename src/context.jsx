@@ -5,6 +5,7 @@ import { nanoid } from "nanoid";
 const AppContext = createContext();
 
 // ---- Initialisation
+let currentId = "";
 
 export const AppProvider = ({ children }) => {
   // ---- Global States
@@ -29,6 +30,17 @@ export const AppProvider = ({ children }) => {
     setComments([...comments, newComment]);
   };
 
+  const deleteComment = (itemId) => {
+    const newItems = comments.filter((item) => item.id !== itemId);
+    setComments(newItems);
+    setIsModalOpen(false);
+  };
+
+  const openModal = (itemId) => {
+    currentId = itemId;
+    setIsModalOpen(true);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -39,6 +51,9 @@ export const AppProvider = ({ children }) => {
         addComment,
         textInput,
         setTextInput,
+        deleteComment,
+        currentId,
+        openModal,
       }}
     >
       {children}
