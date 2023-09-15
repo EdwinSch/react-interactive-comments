@@ -9,6 +9,7 @@ export const AppProvider = ({ children }) => {
   // ---- Global States
   const [comments, setComments] = useState(commentsData);
   const [activeUser, setActiveUser] = useState(currentUser.user);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // ---- Global Functions
 
@@ -17,6 +18,8 @@ export const AppProvider = ({ children }) => {
       value={{
         comments,
         activeUser,
+        isModalOpen,
+        setIsModalOpen,
       }}
     >
       {children}

@@ -3,7 +3,7 @@ import { FaReply, FaEdit, FaTrash } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 
 const Comment = ({ id, user, date, content, points, replies }) => {
-  const { activeUser } = useGlobalContext();
+  const { activeUser, setIsModalOpen } = useGlobalContext();
 
   return (
     <div className="comment-set-wrapper">
@@ -26,12 +26,16 @@ const Comment = ({ id, user, date, content, points, replies }) => {
 
             {activeUser.name === user.name ? (
               <>
-                <button className="text-btn delete-btn">
-                  <FaTrash className="icon" />
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="text-btn delete-btn"
+                  type="button"
+                >
+                  <FaTrash className="icon" aria-label="delete icon" />
                   Delete
                 </button>
-                <button className="text-btn">
-                  <FaEdit className="icon" />
+                <button className="text-btn" type="button">
+                  <FaEdit className="icon" aria-label="edit icon" />
                   Edit
                 </button>
               </>

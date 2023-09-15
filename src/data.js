@@ -17,7 +17,7 @@ export const commentsData = [
     },
     date: "1 month ago",
     content:
-      "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You’ve nailed the design and the responsiveness at various breakpoints works really well.",
+      "Retro williamsburg chartreuse big mood locavore helvetica polaroid tumeric sartorial marxism tumblr photo booth coloring book. Flannel four loko hexagon cronut distillery cloud bread af gluten-free literally.",
     points: 12,
     replies: [],
   },
@@ -29,7 +29,7 @@ export const commentsData = [
     },
     date: "2 weeks ago",
     content:
-      "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
+      " Intelligentsia taiyaki hammock woke. XOXO quinoa you probably haven't heard of them tacos praxis taiyaki unicorn trust fund fam pug farm-to-table. Sus hot chicken iPhone jianbing meh pug echo park artisan bread.",
     points: 5,
     replies: [
       {
@@ -41,7 +41,7 @@ export const commentsData = [
         date: "1 week ago",
         replyTo: "maxblagun",
         content:
-          "If you’re still new, I’d recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It’s very tempting to jump ahead but lay a solid foundation first.",
+          "Photo booth succulents cardigan hammock before they sold out selvage DSA schlitz yes plz twee, meditation fit. Vape subway tile salvia, pabst freegan aesthetic iceland palo pinterest.",
         points: 4,
       },
       {
@@ -53,7 +53,7 @@ export const commentsData = [
         date: "2 days ago",
         replyTo: "ramsesmiron",
         content:
-          "I couldn’t agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.",
+          "Kale chips pabst gastropub intelligentsia. Prism retro cliche affogato microdosing salvia banh mi bruh air plant. Tilde neutral milk hotel jawn umami letterpress mlkshk selfies.",
         points: 2,
       },
     ],

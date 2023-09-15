@@ -1,12 +1,14 @@
-import Vote from "./components/Vote";
 import CommentsList from "./components/CommentsList";
 import Input from "./components/Input";
+import Modal from "./components/Modal";
+import { useGlobalContext } from "./context";
 
 function App() {
+  const { isModalOpen } = useGlobalContext();
+
   return (
     <>
-      {/* <div className="overlay">overlay</div> */}
-
+      {isModalOpen && <Modal />}
       <main>
         <CommentsList />
         <Input />

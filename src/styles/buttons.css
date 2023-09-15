@@ -1,6 +1,6 @@
 .action-btn {
   min-width: 104px;
-  height: 48px;
+  min-height: 48px;
   background: var(--accent);
   border-radius: var(--borderRadius8);
   font-family: var(--font);
