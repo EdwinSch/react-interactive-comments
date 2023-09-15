@@ -1,9 +1,13 @@
 import Vote from "./Vote";
+import EditComment from "./EditComment";
 import { FaReply, FaEdit, FaTrash } from "react-icons/fa";
 import { useGlobalContext } from "../context";
+import { useState } from "react";
 
 const Comment = ({ id, user, date, content, points, replies }) => {
   const { activeUser, openModal } = useGlobalContext();
+
+  const [editMode, setEditMode] = useState(false);
 
   return (
     <div className="comment-set-wrapper">
@@ -19,7 +23,13 @@ const Comment = ({ id, user, date, content, points, replies }) => {
             <p className="timestamp">{date}</p>
           </header>
 
-          <p className="text-content">{content}</p>
+          {/* edit/content mode START */}
+          {editMode ? (
+            <EditComment id={id} content={content} setEditMode={setEditMode} />
+          ) : (
+            <p className="text-content">{content}</p>
+          )}
+          {/* edit/content mode END */}
 
           <div className="btn-wrapper">
             {/* buttons switch START */}
@@ -27,16 +37,19 @@ const Comment = ({ id, user, date, content, points, replies }) => {
               <>
                 <button
                   onClick={() => openModal(id)}
-                  // onClick={() => setIsModalOpen(true)}
                   className="text-btn delete-btn"
                   type="button"
                 >
                   <FaTrash className="icon" aria-label="delete icon" />
-                  Delete
+                  delete
                 </button>
-                <button className="text-btn" type="button">
+                <button
+                  onClick={() => setEditMode(!editMode)}
+                  className="text-btn"
+                  type="button"
+                >
                   <FaEdit className="icon" aria-label="edit icon" />
-                  Edit
+                  {editMode ? "cancel" : "edit"}
                 </button>
               </>
             ) : (

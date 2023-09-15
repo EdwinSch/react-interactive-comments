@@ -13,6 +13,7 @@ export const AppProvider = ({ children }) => {
   const [activeUser, setActiveUser] = useState(currentUser.user);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [textInput, setTextInput] = useState("");
+  const [editTextInput, setEditTextInput] = useState("");
 
   // ---- Global Functions
   const addComment = (textinput) => {
@@ -41,6 +42,17 @@ export const AppProvider = ({ children }) => {
     setIsModalOpen(true);
   };
 
+  const editComment = (id, textInput) => {
+    const newItems = comments.map((item) => {
+      if (item.id === id) {
+        const newItem = { ...item, content: textInput };
+        return newItem;
+      }
+      return item;
+    });
+    setComments(newItems);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -54,6 +66,10 @@ export const AppProvider = ({ children }) => {
         deleteComment,
         currentId,
         openModal,
+        // edits
+        editTextInput,
+        setEditTextInput,
+        editComment,
       }}
     >
       {children}
