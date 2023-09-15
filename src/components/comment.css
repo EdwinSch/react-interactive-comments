@@ -17,6 +17,12 @@
         align-items: center;
         gap: 16px;
 
+        @media only screen and (max-width: 310px) {
+          flex-direction: column;
+          gap: 4px;
+          align-items: flex-start;
+        }
+
         & img {
           width: 32px;
         }
@@ -46,6 +52,10 @@
         font-weight: 400;
         color: var(--textClr);
         line-height: 24px;
+
+        @media only screen and (max-width: 320px) {
+          margin-bottom: 20px;
+        }
       }
 
       .btn-wrapper {
@@ -65,6 +75,10 @@
         @media only screen and (max-width: 500px) {
           top: auto;
           bottom: -50px;
+        }
+        @media only screen and (max-width: 320px) {
+          bottom: -10px;
+          left: 0;
         }
       }
     }
