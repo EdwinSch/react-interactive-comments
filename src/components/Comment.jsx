@@ -67,7 +67,9 @@ const Comment = ({ id, user, date, content, points, replies }) => {
       {/* Replies */}
       <div className="replies-set-wrapper">
         {replies.map((reply) => {
-          return <Reply key={reply.id} {...reply} />;
+          return (
+            <Reply key={reply.id} {...reply} replyToCurrentUser={user.name} />
+          );
         })}
       </div>
     </div>

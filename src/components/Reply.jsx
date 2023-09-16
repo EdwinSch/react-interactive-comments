@@ -3,7 +3,7 @@ import { useGlobalContext } from "../context";
 import { FaReply, FaEdit, FaTrash } from "react-icons/fa";
 import { useState } from "react";
 
-const Reply = ({ id, user, date, content, points }) => {
+const Reply = ({ id, user, date, content, points, replyToCurrentUser }) => {
   const { activeUser, openModal } = useGlobalContext();
 
   const [editMode, setEditMode] = useState(false);
@@ -29,7 +29,9 @@ const Reply = ({ id, user, date, content, points }) => {
         )} */}
         {/* edit/content mode END */}
 
-        <p className="text-content">{content}</p>
+        <p className="text-content">
+          <span className="reply-to">@{replyToCurrentUser}</span> {content}
+        </p>
 
         {activeUser.name === user.name && (
           <div className="btn-wrapper">
