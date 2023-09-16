@@ -1,0 +1,9 @@
+.replies-set-wrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-left: solid var(--borderClr) 2px;
+  padding-left: 45px;
+  margin-left: 40px;
+}

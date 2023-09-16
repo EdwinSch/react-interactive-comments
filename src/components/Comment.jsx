@@ -1,5 +1,6 @@
 import Vote from "./Vote";
 import EditComment from "./EditComment";
+import Reply from "./Reply";
 import { FaReply, FaEdit, FaTrash } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 import { useState } from "react";
@@ -62,6 +63,13 @@ const Comment = ({ id, user, date, content, points, replies }) => {
           </div>
         </div>
       </article>
+
+      {/* Replies */}
+      <div className="replies-set-wrapper">
+        {replies.map((reply) => {
+          return <Reply key={reply.id} {...reply} />;
+        })}
+      </div>
     </div>
   );
 };
