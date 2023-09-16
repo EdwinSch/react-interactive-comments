@@ -14,8 +14,11 @@ export const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [textInput, setTextInput] = useState("");
   const [editTextInput, setEditTextInput] = useState("");
+  const [replyTextInput, setReplyTextInput] = useState("");
 
   // ---- Global Functions
+
+  // COMMENTS
   const addComment = (textinput) => {
     const newComment = {
       id: nanoid(),
@@ -53,6 +56,12 @@ export const AppProvider = ({ children }) => {
     setComments(newItems);
   };
 
+  // REPLIES
+
+  const addReply = (textinput) => {
+    console.log("this is not working yet");
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -70,6 +79,10 @@ export const AppProvider = ({ children }) => {
         editTextInput,
         setEditTextInput,
         editComment,
+        // replies
+        replyTextInput,
+        setReplyTextInput,
+        addReply,
       }}
     >
       {children}

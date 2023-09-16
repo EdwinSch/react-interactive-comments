@@ -1,6 +1,7 @@
 import Vote from "./Vote";
 import EditComment from "./EditComment";
 import Reply from "./Reply";
+import ReplyInput from "./ReplyInput";
 import { FaReply, FaEdit, FaTrash } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 import { useState } from "react";
@@ -8,6 +9,7 @@ import { useState } from "react";
 const Comment = ({ id, user, date, content, points, replies }) => {
   const { activeUser, openModal } = useGlobalContext();
 
+  const [isReplyActive, setIsReplyActive] = useState(false);
   const [editMode, setEditMode] = useState(false);
 
   return (
@@ -54,9 +56,13 @@ const Comment = ({ id, user, date, content, points, replies }) => {
                 </button>
               </>
             ) : (
-              <button className="text-btn reply-btn">
+              <button
+                onClick={() => setIsReplyActive(!isReplyActive)}
+                className="text-btn reply-btn"
+                type="button"
+              >
                 <FaReply className="icon" />
-                Reply
+                {isReplyActive ? "cancel" : "reply"}
               </button>
             )}
             {/* buttons switch END */}
@@ -64,7 +70,14 @@ const Comment = ({ id, user, date, content, points, replies }) => {
         </div>
       </article>
 
-      {/* Replies */}
+      {isReplyActive && (
+        <ReplyInput
+          replyToCurrentUser={user.name}
+          setIsReplyActive={setIsReplyActive}
+        />
+      )}
+
+      {/* Replies rendering */}
       <div className="replies-set-wrapper">
         {replies.map((reply) => {
           return (

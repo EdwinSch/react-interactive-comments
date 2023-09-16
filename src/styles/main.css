@@ -8,6 +8,7 @@
 @import "../components/modal.css";
 @import "../components/editComment.css";
 @import "../components/reply.css";
+@import "../components/replyInput.css";
 
 /* Reset & Utilities */
 *,
