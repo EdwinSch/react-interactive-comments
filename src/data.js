@@ -39,7 +39,6 @@ export const commentsData = [
           img: "/ramsesmiron.webp",
         },
         date: "1 week ago",
-        replyTo: "maxblagun",
         content:
           "Photo booth succulents cardigan hammock before they sold out selvage DSA schlitz yes plz twee, meditation fit. Vape subway tile salvia, pabst freegan aesthetic iceland palo pinterest.",
         points: 4,
@@ -47,15 +46,26 @@ export const commentsData = [
       {
         id: nanoid(),
         user: {
-          name: "juliusomo",
-          img: "/juliusomo.webp",
+          name: "amyrobson",
+          img: "/amyrobson.webp",
         },
-        date: "2 days ago",
-        replyTo: "ramsesmiron",
+        date: "2 weeks ago",
         content:
-          "Kale chips pabst gastropub intelligentsia. Prism retro cliche affogato microdosing salvia banh mi bruh air plant. Tilde neutral milk hotel jawn umami letterpress mlkshk selfies.",
-        points: 2,
+          "Pug art party freegan, fingerstache cray tilde 3 wolf moon typewriter viral vaporware occupy adaptogen fit shaman mumblecore. ",
+        points: 1,
       },
+      // {
+      //   id: nanoid(),
+      //   user: {
+      //     name: "juliusomo",
+      //     img: "/juliusomo.webp",
+      //   },
+      //   date: "2 days ago",
+      //   replyTo: "ramsesmiron",
+      //   content:
+      //     "Kale chips pabst gastropub intelligentsia. Prism retro cliche affogato microdosing salvia banh mi bruh air plant. Tilde neutral milk hotel jawn umami letterpress mlkshk selfies.",
+      //   points: 2,
+      // },
     ],
   },
   // TEMP Test Item
