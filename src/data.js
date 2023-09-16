@@ -44,18 +44,18 @@ export const commentsData = [
           "Photo booth succulents cardigan hammock before they sold out selvage DSA schlitz yes plz twee, meditation fit. Vape subway tile salvia, pabst freegan aesthetic iceland palo pinterest.",
         points: 4,
       },
-      // {
-      //   id: nanoid(),
-      //   user: {
-      //     name: "juliusomo",
-      //     img: "/juliusomo.webp",
-      //   },
-      //   date: "2 days ago",
-      //   replyTo: "ramsesmiron",
-      //   content:
-      //     "Kale chips pabst gastropub intelligentsia. Prism retro cliche affogato microdosing salvia banh mi bruh air plant. Tilde neutral milk hotel jawn umami letterpress mlkshk selfies.",
-      //   points: 2,
-      // },
+      {
+        id: nanoid(),
+        user: {
+          name: "juliusomo",
+          img: "/juliusomo.webp",
+        },
+        date: "2 days ago",
+        replyTo: "ramsesmiron",
+        content:
+          "Kale chips pabst gastropub intelligentsia. Prism retro cliche affogato microdosing salvia banh mi bruh air plant. Tilde neutral milk hotel jawn umami letterpress mlkshk selfies.",
+        points: 2,
+      },
     ],
   },
   // TEMP Test Item
